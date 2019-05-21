@@ -1,5 +1,6 @@
 val sbtcompat = project in file(".")
 
+version in ThisBuild      := "1.0.0"
 organization in ThisBuild := "com.dwijnand"
         name              := "sbt-compat"
     licenses in ThisBuild := Seq(("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0")))
