@@ -34,3 +34,13 @@ mimaPreviousArtifacts := Set {
 mimaBinaryIssueFilters ++= Seq()
 
 cancelable in Global := true
+
+publishMavenStyle := true
+publishTo := {
+  val nexus = "https://repo.powerspace.com/artifactory/"
+  if (Keys.isSnapshot.value)
+    Some("snapshots" at nexus + "sbt-snapshot-local")
+  else
+    Some("releases" at nexus + "sbt-release-local")
+}
+credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
